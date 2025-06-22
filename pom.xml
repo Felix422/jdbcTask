@@ -46,12 +46,10 @@
         <version>3.7.1</version>
         <configuration>
           <descriptorRefs>
-            <!-- Используем стандартный дескриптор, который включает все зависимости -->
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
           <archive>
             <manifest>
-              <!-- Указываем главный класс (замените на ваш) -->
               <mainClass>org.example.App</mainClass>
             </manifest>
           </archive>
