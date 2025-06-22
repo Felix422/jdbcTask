@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>jdbcTaskV2</artifactId>
+  <artifactId>jdbcTask</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>jdbcTaskV2</name>
+  <name>jdbcTask</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -39,6 +39,46 @@
           <target>11</target>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.7.1</version>
+        <configuration>
+          <descriptorRefs>
+            <!-- Используем стандартный дескриптор, который включает все зависимости -->
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <!-- Указываем главный класс (замените на ваш) -->
+              <mainClass>org.example.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-jar-plugin</artifactId>-->
+<!--        <version>3.4.1</version>-->
+<!--        <configuration>-->
+<!--          <archive>-->
+<!--            <manifest>-->
+<!--              <mainClass>org.example.App</mainClass>-->
+<!--            </manifest>-->
+<!--          </archive>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+
     </plugins>
   </build>
 </project>
